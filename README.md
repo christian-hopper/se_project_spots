@@ -4,7 +4,8 @@
 
 - Description
 - Features
-- Figma
+- Deployment
+- Walkthrough Video
 - Images
 - Plans for Improvement
 - Author
@@ -35,6 +36,12 @@ The Spots webpage allows users to:
 This webpage is deployed to GitHub Pages:
 
 - [Deployment Link](https://christian-hopper.github.io/se_project_spots)
+
+**Walkthrough Video**
+
+I have made a video walking through my thought process of making this webpage:
+
+- [Deployment Link](https://drive.google.com/file/d/1dBxARI2zRCNyJ-I0HxaCEEbsOjGCzNMM/view?usp=sharing)
 
 **Images**
 
