@@ -28,7 +28,7 @@
   background-image: url(../images/heart.svg);
   border: none;
   cursor: pointer;
-  background: transparent;
+  background-color: transparent;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -49,5 +49,9 @@
   .card__title {
     font-size: 16px;
     max-width: 250px;
+  }
+  .card__like-button {
+    width: 20px;
+    height: 18px;
   }
 }
