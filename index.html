@@ -93,6 +93,7 @@
                 type="text"
                 placeholder="Describe yourself"
                 class="modal__input"
+                required
               />
             </label>
             <button type="submit" class="modal__submit-button">Save</button>
@@ -117,6 +118,7 @@
                 type="url"
                 placeholder="Paste a link to the picture"
                 class="modal__input"
+                required
               />
             </label>
             <label for="image-caption-input" class="modal__label">
@@ -126,13 +128,14 @@
                 type="text"
                 placeholder="Type your caption"
                 class="modal__input"
+                required
               />
             </label>
             <button type="submit" class="modal__submit-button">Save</button>
           </form>
         </div>
       </div>
-      <div class="modal modal__type_preview" id="preview-modal">
+      <div class="modal modal_type_preview" id="preview-modal">
         <div class="modal__image-content">
           <img class="modal__image" />
           <p class="modal__caption">Golden Gate Bridge</p>
