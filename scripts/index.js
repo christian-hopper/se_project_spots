@@ -98,10 +98,6 @@ function getCardElement(data) {
     openModal(previewModal);
   });
 
-  previewModalCloseButton.addEventListener("click", () => {
-    closeModal(previewModal);
-  });
-
   return cardElement;
 }
 
@@ -131,6 +127,10 @@ editProfileCloseButton.addEventListener("click", function () {
 
 newPostButton.addEventListener("click", function () {
   openModal(newPostModal);
+});
+
+previewModalCloseButton.addEventListener("click", () => {
+  closeModal(previewModal);
 });
 
 newPostCloseButton.addEventListener("click", function () {
