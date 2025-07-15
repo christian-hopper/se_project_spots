@@ -6,6 +6,7 @@ import {
   settings,
 } from "../scripts/validation.js";
 import { setButtonText } from "../utils/helpers.js";
+import Card from "../components/Card.js";
 import Api from "../utils/Api.js";
 
 const api = new Api({
@@ -20,8 +21,15 @@ api
   .getAppInfo()
   .then(([cards, userInfo]) => {
     cards.forEach((item) => {
-      const cardElement = getCardElement(item);
-      cardList.append(cardElement);
+      // const cardElement = getCardElement(item);
+      const card = new Card(
+        item,
+        "#card-template",
+        handleLike,
+        handleDeleteCard,
+        handlePreview
+      );
+      cardList.append(card.getCardElement());
     });
     profileNameElement.textContent = userInfo.name;
     profileDescriptionElement.textContent = userInfo.about;
@@ -30,6 +38,13 @@ api
   .catch((error) => {
     console.error("Error fetching data:", error);
   });
+
+function handlePreview(data) {
+  previewImageElement.src = data.link;
+  previewImageElement.alt = data.name;
+  previewCaptionElement.textContent = data.name;
+  openModal(previewModal);
+}
 
 // Edit Profile elements
 const editProfileButton = document.querySelector(".profile__edit-button");
@@ -102,38 +117,6 @@ const cardList = document.querySelector(".cards__list");
 
 let selectedCard, selectedCardId;
 
-function getCardElement(data) {
-  const cardElement = cardTemplate.cloneNode(true);
-  const cardTitleElement = cardElement.querySelector(".card__title");
-  const cardImageElement = cardElement.querySelector(".card__image");
-  const cardLikeButton = cardElement.querySelector(".card__like-button");
-  const cardDeleteButton = cardElement.querySelector(".card__delete-button");
-
-  cardImageElement.src = data.link;
-  cardImageElement.alt = data.name;
-  cardTitleElement.textContent = data.name;
-
-  if (data.isLiked) {
-    cardLikeButton.classList.add("card__like-button_active");
-  }
-
-  cardLikeButton.addEventListener("click", (evt) => {
-    handleLike(evt, data);
-  });
-  cardDeleteButton.addEventListener("click", () =>
-    handleDeleteCard(cardElement, data)
-  );
-
-  cardImageElement.addEventListener("click", () => {
-    previewImageElement.src = data.link;
-    previewImageElement.alt = data.name;
-    previewCaptionElement.textContent = data.name;
-    openModal(previewModal);
-  });
-
-  return cardElement;
-}
-
 function openModal(modal) {
   modal.classList.add("modal_is-open");
   document.addEventListener("keydown", handleEscapeKey);
@@ -204,6 +187,7 @@ function handleEditProfileFormSubmit(evt) {
       console.error("Error updating user info:", error);
     })
     .finally(() => {
+      editProfileSubmitButton.disabled = false;
       setButtonText(editProfileSubmitButton, false);
     });
 }
@@ -220,15 +204,27 @@ function handleNewPostFormSubmit(evt) {
       name: newPostCaptionInput.value,
     })
     .then((newCardValues) => {
-      const newCardElement = getCardElement(newCardValues);
-      cardList.prepend(newCardElement);
+      const card = new Card(
+        newCardValues,
+        "#card-template",
+        handleLike,
+        handleDeleteCard,
+        handlePreview
+      );
+      cardList.prepend(card.getCardElement());
       closeModal(newPostModal);
       newPostForm.reset();
+      resetValidation(
+        newPostForm,
+        newPostForm.querySelectorAll(".modal__input"),
+        settings
+      );
     })
     .catch((error) => {
       console.error("Error adding new card:", error);
     })
     .finally(() => {
+      newPostSubmitButton.disabled = false;
       setButtonText(newPostSubmitButton, false);
     });
 }
@@ -251,6 +247,7 @@ function handleEditAvatarFormSubmit(evt) {
       console.error("Error updating avatar:", error);
     })
     .finally(() => {
+      editAvatarSubmitButton.disabled = false;
       setButtonText(editAvatarSubmitButton, false);
     });
 }
@@ -270,6 +267,7 @@ function handleDeleteSubmit() {
       console.error("Error deleting card:", error);
     })
     .finally(() => {
+      deleteConfirmButton.disabled = false;
       setButtonText(deleteConfirmButton, false, "Delete", "Deleting...");
     });
 }
