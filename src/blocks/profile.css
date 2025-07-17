@@ -9,10 +9,16 @@
   height: 190px;
   border-radius: 8px;
   object-fit: cover;
+  display: block;
 }
 
 .profile__avatar-container {
   position: relative;
+}
+
+.profile__avatar-container:hover .profile__avatar-button {
+  visibility: visible;
+  cursor: pointer;
 }
 
 .profile__avatar-button {
@@ -31,11 +37,6 @@
   font-weight: 500;
   line-height: 1;
   visibility: hidden;
-}
-
-.profile__avatar-container:hover .profile__avatar-button {
-  visibility: visible;
-  cursor: pointer;
 }
 
 .profile__avatar-button::after {
@@ -146,6 +147,7 @@
     border-radius: 6px;
     padding: 4px;
     box-sizing: border-box;
+    align-items: center;
   }
 
   .profile__avatar-button::after {
