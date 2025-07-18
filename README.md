@@ -1,8 +1,8 @@
-# Spots 🌍
+# Spots
 
 **Spots** is a dynamic photo-sharing web application where users can showcase and explore beautiful locations, memorable moments, and inspiring scenes from around the world.
 
-## 🚀 Features
+## Features
 
 - **User Profile Management**
   - Edit your name, bio, and profile picture
@@ -16,7 +16,7 @@
 - **API Integration**
   - Fetch and persist user info and cards via RESTful endpoints
 
-## 🛠 Technologies Used
+## Technologies Used
 
 - HTML5
 - CSS3 (BEM methodology)
@@ -25,7 +25,7 @@
 - REST API
 - Git & GitHub
 
-## 📦 Key Functionality
+## Key Functionality
 
 - `Api.js`: Handles all API calls (fetch cards, update user info/avatar, add/delete cards, toggle likes).
 - `Card.js`: Creates card elements with like and delete functionality.
@@ -34,30 +34,30 @@
 - `validation.js`: Enables and resets client-side form validation.
 - `helpers.js`: Utility helpers like `setButtonText()` for improved UX.
 
-## 🌐 Deployment
+## Deployment
 
 This project is deployed on GitHub Pages:
 
-🔗 [View Live Site](https://christian-hopper.github.io/se_project_spots)
+[View Live Site](https://christian-hopper.github.io/se_project_spots)
 
-## 🎥 Walkthrough Video
+## Walkthrough Video
 
 Here’s a video walkthrough of my thought process behind the development:
 
-🎬 [Watch on Google Drive](https://drive.google.com/file/d/1dBxARI2zRCNyJ-I0HxaCEEbsOjGCzNMM/view?usp=sharing)
+[Watch on Google Drive](https://drive.google.com/file/d/1dBxARI2zRCNyJ-I0HxaCEEbsOjGCzNMM/view?usp=sharing)
 
-## 🖼 Screenshots
+## Screenshots
 
 | Desktop | Mobile |
 |--------|--------|
 | ![Spots Desktop Screenshot](./images/spots-desktop.jpeg) | ![Spots Mobile Screenshot](./images/spots-mobile.jpeg) |
 
-## 🌱 Plans for Improvement
+## Plans for Improvement
 
 - Add user authentication (sign up/login)
 - Enable comments on posts
 - Improve accessibility (ARIA roles, keyboard navigation)
 - Add a dark mode toggle
 
-**Author**
+## Author
 Created by Christian Hopper
