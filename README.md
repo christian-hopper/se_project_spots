@@ -1,35 +1,38 @@
-# Project 3: Spots
+# Spots
 
-### Overview
+Spots is a dynamic photo-sharing web application where users can showcase and explore beautiful locations, memorable moments, and inspiring scenes from around the world.
 
-- Description
-- Features
-- Deployment
-- Walkthrough Video
-- Images
-- Plans for Improvement
-- Author
+## Features
 
-**Description**
+- **User Profile Management**
+  - Edit your name, bio, and profile picture
+- **Card System**
+  - Create and view photo cards with captions
+  - Like and delete your own cards
+- **Responsive Modals**
+  - Edit profile, update avatar, preview images, add new posts, and confirm deletions using interactive modal windows
+- **Form Validation**
+  - Real-time form validation with error messages for required fields and input types
+- **API Integration**
+  - Fetch and persist user info and cards from a remote server using RESTful endpoints
 
-The Spots webpage allows users to:
+## Technologies Used
 
-- Explore a profile section featuring a user photo, biography, and customizable options.
-- View a gallery of beautiful, travel-inspired photo cards.
-- Interact with profile and post buttons (currently static, with plans for future interactivity).
-- Enjoy a visually engaging layout optimized for clean looks.
+- HTML5
+- CSS3 (BEM Methodology)
+- JavaScript (ES6 Modules)
+- Webpack
+- REST API
+- Git & GitHub
 
-**Features**
+## Key Functionality
 
-- Semantic HTML5
-- BEM file structure for scalable and maintainable code
-- Flexbox layout for responsive design
-- Placeholder buttons for profile and post interactivity
-- Google Fonts integration
-- Use of SVG and image files for high-quality graphics
-- Clear visual hierarchy with CSS styling
-- Favicon integration for brand identity
-- Mobile-friendly and responsive design
+- `Api.js`: Handles all API calls (fetching cards, updating user info/avatar, adding/deleting cards, toggling likes).
+- `Card.js`: Generates individual card elements with like and delete functionalities.
+- `UserInfo.js`: Manages and updates user profile information on the page.
+- `Modal.js`: Handles opening/closing of all modal windows.
+- `validation.js`: Enables and resets form validation dynamically.
+- `helpers.js`: Utility functions like `setButtonText()` for UX feedback during async operations.
 
 **Deployment**
 
@@ -50,7 +53,10 @@ I have made a video walking through my thought process of making this webpage:
 
 **Plans for Improvement**
 
-- Add interactivity with JavaScript
+- Add user authentication (sign up/login)
+- Allow users to comment on posts
+- Improve accessibility with ARIA roles and keyboard navigation
+- Introduce dark mode toggle
 
 **Author**
 Created by Christian Hopper
